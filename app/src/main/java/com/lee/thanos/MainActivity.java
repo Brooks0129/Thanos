@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -47,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     private void setDummyData(ArrayList<ItemBean> mList) {
         for (int i = 0; i < 10; i++) {
             mList.add(new ItemBean("This is Item " + i,
-                    "This is Item " + i + ",jfhjshfjhadnbdheiqiuodjabe",
-                    "", "item " + i, 0));
+                    "This is Item " + i,
+                    "item "+i, 0));
         }
     }
 
