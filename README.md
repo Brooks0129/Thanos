@@ -2,6 +2,7 @@
 [github地址](https://github.com/Brooks0129/Thanos)
 
 在手机chrome搜索灭霸后，会出现一个手套的图片，点击图片后会出现一个彩蛋，即一半的搜索结果会消失。消失的动画如下图所示：
+
 ![chrome](https://img-blog.csdnimg.cn/20190505234908127.gif)
 
 可以看到这个动画 大致可以理解为：将当前view分为两份，每一份同时做透明度动画，并且同时向左想右移动。
@@ -9,6 +10,7 @@
 先来看下我们实现的效果：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190506000027878.gif)
+
 首先是实现的思路：
 
 如何让一个view同时向左右移动呢？我们可以创建两个一模一样的view。但是现在问题来了？如果将原来的view复制一份，合适吗？如果view的层级比较复杂，那么这样做的成本十分巨大。所以我的方案是将当前view的截图保存为Bitmap，然后在一个新的view里创建两个ImageView，将bitmap分别设置给ImageView。然后我们对两个ImageView做动画就可以了。
